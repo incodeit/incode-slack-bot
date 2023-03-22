@@ -10,8 +10,8 @@ from slack_sdk.errors import SlackApiError
 
 # Google Sheets API setup
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
-SHEET_ID = 'YOUR_GOOGLE_SHEET_ID'
-RANGE_NAME = 'Sheet1!A1:B'  # Update according to your sheet range
+SHEET_ID = '1torhO_gjLKIYcFHe7c7PVszn8kttI5pIcl_ZlUHs7tk'
+RANGE_NAME = 'Foglio1!A1:B3'  # Update according to your sheet range
 
 def get_google_sheets_credentials():
     creds = None
@@ -59,7 +59,7 @@ if __name__ == '__main__':
         for row in sheet_data:
             message += f"{row[0]}: {row[1]}\n"
 
-        slack_channel = "#your-slack-channel"  # Update with your desired Slack channel
+        slack_channel = "#status"  # Update with your desired Slack channel
         post_message_to_slack(slack_channel, message)
     else:
         print("No data found.")
